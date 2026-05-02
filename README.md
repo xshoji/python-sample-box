@@ -10,6 +10,7 @@ Java / Go / Node.js などの経験がある人が、Python らしい書き方�
 - 説明よりも、実行して挙動を確認できるコードを優先する
 - 他言語経験者が比較しやすいように、Python 特有の意図や文化をコメントに残す
 - 1ファイル1テーマを基本にする
+- 解説 README や補助モジュールを伴うテーマは `samples/NN_name/` ディレクトリ形式にし、エントリポイントは `main.py` に固定する
 
 ## 実行方法
 
@@ -98,6 +99,7 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/10_dataclasses.py` | `dataclass` による値オブジェクト的なクラス |
 | `samples/11_type_hints_are_not_runtime_checks.py` | type hints は実行時チェックではないこと |
 | `samples/12_eafp_exceptions.py` | Python 文化の EAFP と例外の使い方 |
+| `samples/13_bytecode_and_pycache/` | CPython・バイトコード・`__pycache__` の関係（解説 README 付き） |
 
 ## 読み進め方
 
