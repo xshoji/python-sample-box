@@ -26,6 +26,16 @@ class Cart:
 
     def __repr__(self) -> str:
         # デバッグ時に「再現しやすい表現」を返すのが慣例。
+        # 先頭の `f` は f-string (formatted string literal, Python 3.6+)。
+        # `{}` の中に式を書くとその場で評価されて文字列に埋め込まれる。
+        # JavaScript の `` `hello, ${name}` ``、Kotlin の "$name" 相当。
+        #
+        # `{値}` だけだとデフォルトで str() が使われ、文字列はクォートなしでそのまま埋め込まれる。
+        #   例) f"{'alice'}"   → alice
+        # `!r` を付けると repr() が使われ、文字列であることが分かる形（クォート付き）で埋め込まれる。
+        #   例) f"{'alice'!r}" → 'alice'
+        # __repr__ の中では「再現可能な表現」が欲しいので慣例的に `!r` を使う。
+        # 他に `!s` (= str)、`!a` (= ascii) があり、`:` の後ろでは書式指定（例: f"{x:.2f}"）も使える。
         return f"Cart(owner={self.owner!r}, items={self.items!r})"
 
 
