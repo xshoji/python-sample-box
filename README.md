@@ -102,6 +102,7 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/13_bytecode_and_pycache/` | CPython・バイトコード・`__pycache__` の関係（解説 README 付き） |
 | `samples/14_venv_and_dependencies/` | venv・pip・3rd party 依存の隔離（npm との対比、解説 README 付き） |
 | `samples/15_python_versions_and_managers/` | `python` / `python3` の使い分け、複数バージョン共存（mise / pyenv / uv、解説 README 付き） |
+| `samples/16_tuples.py` | tuple の役割と現場で頻出するパターン（複数戻り値、unpack、dict キー、NamedTuple） |
 
 ## 読み進め方
 
