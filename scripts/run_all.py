@@ -16,10 +16,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLES = ROOT / "samples"
 
+# 一括実行から外したいサンプルの NN_name（samples/ 直下の名前）を列挙する。
+# 例: 3rd party 依存があり、専用の手順（uv sync 等）でだけ動かしたいもの。
+EXCLUDED: set[str] = {
+    "18_http_request_with_requests",
+}
+
 
 def iter_entrypoints() -> list[Path]:
     entries: list[Path] = []
     for path in SAMPLES.glob("[0-9][0-9]_*"):
+        if path.name in EXCLUDED:
+            continue
         if path.is_file() and path.suffix == ".py":
             entries.append(path)
         elif path.is_dir():

@@ -103,6 +103,8 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/14_venv_and_dependencies/` | venv・pip・3rd party 依存の隔離（npm との対比、解説 README 付き） |
 | `samples/15_python_versions_and_managers/` | `python` / `python3` の使い分け、複数バージョン共存（mise / pyenv / uv、解説 README 付き） |
 | `samples/16_tuples.py` | tuple の役割と現場で頻出するパターン（複数戻り値、unpack、dict キー、NamedTuple） |
+| `samples/17_http_request_stdlib.py` | 標準ライブラリ `urllib.request` だけで HTTP リクエストを送る |
+| `samples/18_http_request_with_requests/` | 3rd party `requests` で HTTP リクエストを送る（このサンプル専用の `pyproject.toml` + `uv` で動かす。`run_all.py` からは除外） |
 
 ## 読み進め方
 
