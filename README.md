@@ -105,6 +105,7 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/16_tuples.py` | tuple の役割と現場で頻出するパターン（複数戻り値、unpack、dict キー、NamedTuple） |
 | `samples/17_http_request_stdlib.py` | 標準ライブラリ `urllib.request` だけで HTTP リクエストを送る |
 | `samples/18_http_clients_3rd_party/` | 3rd party HTTP クライアント比較（`requests` / `httpx` / `aiohttp`）と OpenAPI Generator が `requests` を採用しない理由の解説。専用 `pyproject.toml` + `uv` で動かす。`run_all.py` からは除外 |
+| `samples/19_init_py_and_packages/` | `__init__.py` と Python の package の仕組み（初期化、公開 API curation、`__all__`、サブ package、解説 README 付き） |
 
 ## 読み進め方
 
