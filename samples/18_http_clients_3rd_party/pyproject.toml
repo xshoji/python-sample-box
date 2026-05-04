@@ -1,0 +1,19 @@
+# 3rd party HTTP クライアントの比較サンプル専用 pyproject.toml。
+#
+# - リポジトリ全体は stdlib のみ方針なので、ここだけ独立した uv プロジェクトにしている。
+# - 動かし方:
+#       cd samples/18_http_clients_3rd_party
+#       uv sync          # .venv をこの dir に作って依存を入れる
+#       uv run main.py   # 全ライブラリの例を順に実行
+# - scripts/run_all.py からは EXCLUDED として除外済み。
+
+[project]
+name = "http-clients-3rd-party"
+version = "0.0.0"
+description = "Compare major Python HTTP client libraries: requests / httpx / aiohttp."
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32",
+    "httpx>=0.27",
+    "aiohttp>=3.10",
+]
