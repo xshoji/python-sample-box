@@ -19,7 +19,7 @@ SAMPLES = ROOT / "samples"
 # 一括実行から外したいサンプルの NN_name（samples/ 直下の名前）を列挙する。
 # 例: 3rd party 依存があり、専用の手順（uv sync 等）でだけ動かしたいもの。
 EXCLUDED: set[str] = {
-    "18_http_request_with_requests",
+    "18_http_clients_3rd_party",
 }
 
 
