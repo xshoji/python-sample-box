@@ -27,6 +27,12 @@ from typing import Final, Literal, NewType, Protocol, TypedDict, overload, runti
 # 「`area()` メソッドを持つ何か」という形で要求し、
 # 偶然そのメソッドを持つクラスはすべて該当する（duck typing 的）。
 # Go の interface に最も近い。
+#
+# `@runtime_checkable` は「この Protocol を `isinstance(obj, HasArea)` で
+# **実行時にも判定できるようにする**」マーカー decorator。
+# 付けないと Protocol は静的解析専用となり、isinstance に渡すと TypeError になる。
+# 付けると isinstance は「対象が Protocol で要求しているメソッド名を全部持つか」を
+# 名前ベースで確認する（型シグネチャまでは見ない、duck typing の延長）。
 @runtime_checkable
 class HasArea(Protocol):
     def area(self) -> float: ...
