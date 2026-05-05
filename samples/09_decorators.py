@@ -12,6 +12,31 @@ Java の annotation `@Override` などと違い、Python の decorator は **実
 書き換える普通のコード** であって、メタ情報の付与だけではない点に注意。
 """
 
+# ============================================================
+# import 構文と命名規則の読み解き
+# ============================================================
+# `from X import Y` の意味:
+#   1. モジュール X 全体を読み込み・実行する（中の他の名前もメモリには載る）
+#   2. その中の名前 Y だけを **このファイルの名前空間に束縛** する
+#   → 「メモリ節約のために 1 つだけロード」ではなく「短い名前で呼べるようにする」構文
+#
+# `from collections.abc import Callable` の構造:
+#   - `collections`     : パッケージ（ディレクトリ）
+#   - `collections.abc` : その中のサブモジュール（ドットはディレクトリ階層を辿る）
+#   - `Callable`        : サブモジュールの中で定義されているクラス
+#
+# 命名規則（PEP 8、import される実体の種類が分かる）:
+#   - CapWords (頭大文字)  → クラス        : `Callable`, `TypeVar`
+#   - snake_case (頭小文字) → 関数 / 変数  : `wraps`, `perf_counter`
+#   - UPPER_SNAKE          → 定数
+#   Java や TypeScript の camelCase（先頭小文字の連結語）は Python では基本使わない。
+#   このため「頭文字を見ただけでクラスか関数かほぼ判別できる」のが Python の利点。
+#
+# 下の 4 行を分類するとこうなる:
+#   Callable      クラス    （Callable[[int], str] のように使う型ヒント）
+#   wraps         関数      （@wraps(func) でデコレーター内に使う）
+#   perf_counter  関数      （高精度な経過時間を返す）
+#   TypeVar       クラス    （T = TypeVar("T") のようにインスタンス化する）
 from collections.abc import Callable
 from functools import wraps
 from time import perf_counter
