@@ -22,8 +22,16 @@ samples/
   supporting_module_for_import.py  # 03 で使う import 対象
 scripts/
   run_all.py            # samples/ を NN 順に一括実行
+docs/
+  sample_candidates.md  # 今後追加候補のサンプルテーマ一覧（ブレスト用）
 README.md               # サンプル一覧と Python バージョン解説
 ```
+
+## 追加サンプルの検討
+
+新しいサンプルを追加するときは、まず [`docs/sample_candidates.md`](docs/sample_candidates.md) を参照すること。
+追加候補のテーマと採用理由、未確定の判断ポイントが整理されている。
+新しい候補を思いついた場合もここに追記する。
 
 ## サンプルの規約
 
@@ -43,7 +51,7 @@ README.md               # サンプル一覧と Python バージョン解説
 - Python 3.12 の機能まで使ってよい（`match`、PEP 695 ジェネリクス等）
 - インデントはスペース 4。タブ禁止
 - 文字列は基本ダブルクォート、docstring は `"""..."""`
-- `from __future__ import annotations` は必要なときだけ（`scripts/run_all.py` が使っている例あり）
+- `from __future__ import annotations` は **原則使わない**。3.12 前提なので `list[str]` や `int | None` はそのまま書ける。自己参照型などやむを得ない場合のみ使う
 - 例外を握りつぶさない。EAFP を示すサンプルでは、捕まえる例外型を具体的に書く
 
 ## 検証方法
