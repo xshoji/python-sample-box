@@ -106,6 +106,16 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/17_http_request_stdlib.py` | 標準ライブラリ `urllib.request` だけで HTTP リクエストを送る |
 | `samples/18_http_clients_3rd_party/` | 3rd party HTTP クライアント比較（`requests` / `httpx` / `aiohttp`）と OpenAPI Generator が `requests` を採用しない理由の解説。専用 `pyproject.toml` + `uv` で動かす。`run_all.py` からは除外 |
 | `samples/19_init_py_and_packages/` | `__init__.py` と Python の package の仕組み（初期化、公開 API curation、`__all__`、サブ package、解説 README 付き） |
+| `samples/20_args_kwargs_and_argument_kinds.py` | `*args` / `**kwargs` と positional-only (`/`) / keyword-only (`*`) の引数種別 |
+| `samples/21_match_statement.py` | `match` 文（structural pattern matching, 3.10+）。リテラル / シーケンス / dict / クラス / ガード |
+| `samples/22_enum.py` | `Enum` / `IntEnum` / `StrEnum`（3.11+）/ `auto()` と enum へのメソッド定義 |
+| `samples/23_pathlib.py` | `pathlib.Path`：`/` 演算子によるパス連結、読み書き、glob 走査 |
+| `samples/24_logging_basics.py` | `logging` の基本作法。`getLogger(__name__)` と `basicConfig`、`%-style` 引数 |
+| `samples/25_datetime_and_zoneinfo.py` | `datetime` と `zoneinfo`（3.9+）：naive と aware の使い分け、astimezone、ISO 8601 |
+| `samples/26_typing_practical.py` | `typing` 実用編：`Protocol` / `TypedDict` / `Literal` / `NewType` / `Final` / `overload` |
+| `samples/27_asyncio_basics.py` | `asyncio` 最小サンプル：`async`/`await` / `gather`、直列 vs 並行、await し忘れの罠 |
+| `samples/28_argparse_cli.py` | `argparse` で CLI を作る：位置引数、オプション、choices、`BooleanOptionalAction`、サブコマンド |
+| `samples/29_slots_and_property.py` | `__slots__` と `@property`、`@dataclass(slots=True)` によるクラス設計の Python 流イディオム |
 
 ## 読み進め方
 
