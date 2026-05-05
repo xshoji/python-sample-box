@@ -6,8 +6,6 @@
 - ``samples/NN_name/main.py``      : ディレクトリ形式（README.md などを伴う）
 """
 
-from __future__ import annotations
-
 import subprocess
 import sys
 from pathlib import Path
