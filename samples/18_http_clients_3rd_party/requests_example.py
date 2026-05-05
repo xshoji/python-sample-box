@@ -5,8 +5,6 @@ sync 専用・HTTP/1.1 専用・maintenance mode という制約はあるが、A
 資料の多さで既存プロジェクトでは依然として広く使われている。
 """
 
-from __future__ import annotations
-
 import requests
 
 

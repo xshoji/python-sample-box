@@ -24,8 +24,6 @@ sys.path[0] に自動で入れる。そのため `import mypkg` でこの dir �
 mypkg/ を見つけられる（=「このサンプルは追加設定なしでそのまま動く」）。
 """
 
-from __future__ import annotations
-
 import sys
 
 

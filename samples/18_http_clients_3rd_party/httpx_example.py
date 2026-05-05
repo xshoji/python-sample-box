@@ -9,8 +9,6 @@
 ここでは sync 版と async 版を順番に動かす。
 """
 
-from __future__ import annotations
-
 import asyncio
 
 import httpx

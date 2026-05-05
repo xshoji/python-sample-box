@@ -7,8 +7,6 @@
 詳しい背景・解決策は同ディレクトリの README.md を参照。
 """
 
-from __future__ import annotations
-
 import os
 import shutil
 import sys

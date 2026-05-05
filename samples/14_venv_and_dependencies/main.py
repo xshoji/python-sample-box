@@ -12,8 +12,6 @@
 詳しい使い方・背景は同ディレクトリの README.md を参照。
 """
 
-from __future__ import annotations
-
 import site
 import sys
 from pathlib import Path

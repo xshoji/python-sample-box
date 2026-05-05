@@ -12,8 +12,6 @@
 詳しい背景は同ディレクトリの README.md を参照。
 """
 
-from __future__ import annotations
-
 import py_compile
 import sys
 from pathlib import Path

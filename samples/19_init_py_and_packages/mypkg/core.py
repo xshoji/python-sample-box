@@ -4,8 +4,6 @@
 利用者はこのファイルの存在を意識せず `from mypkg import Greeter, greet` で使える。
 """
 
-from __future__ import annotations
-
 
 class Greeter:
     """挨拶を組み立てるクラス（中身は重要ではなく、再エクスポートされることが本題）。"""

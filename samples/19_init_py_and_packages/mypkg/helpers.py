@@ -8,8 +8,6 @@
    慣習: 名前を `_` で始める / ドキュメントで「内部用」と明記する。
 """
 
-from __future__ import annotations
-
 
 def internal_helper(value: int) -> int:
     """`__init__.py` 経由では公開していない関数。

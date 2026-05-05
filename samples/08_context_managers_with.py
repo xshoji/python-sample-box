@@ -4,8 +4,6 @@
 `with` を抜けるとき、例外が発生していても `__exit__` が呼ばれます。
 """
 
-from __future__ import annotations
-
 from collections.abc import Iterator
 from contextlib import contextmanager
 

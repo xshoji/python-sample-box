@@ -11,8 +11,6 @@ Python は **3rd party 不要で HTTP が叩ける** のが特徴の 1 つ。
 失敗時はメッセージを出して exit 0 で終わる（``run_all.py`` を壊さないため）。
 """
 
-from __future__ import annotations
-
 import json
 import urllib.error
 import urllib.parse

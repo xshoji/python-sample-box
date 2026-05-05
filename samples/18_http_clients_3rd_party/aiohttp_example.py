@@ -9,8 +9,6 @@
 というケースでは aiohttp が現役で選ばれる。
 """
 
-from __future__ import annotations
-
 import asyncio
 
 import aiohttp

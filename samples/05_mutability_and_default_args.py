@@ -4,8 +4,6 @@ Python のデフォルト引数は「関数定義時に一度だけ」評価さ�
 list / dict のような mutable object をそのまま置くと、呼び出し間で共有されます。
 """
 
-from __future__ import annotations
-
 
 def append_bad(item: str, bucket: list[str] = []) -> list[str]:
     # 悪い例: bucket は呼び出しごとに新規作成されない。
@@ -33,10 +31,9 @@ def append_bad(item: str, bucket: list[str] = []) -> list[str]:
 #     - 古い書き方では `Optional[list[str]]`（= `Union[list[str], None]`）。
 #     - TypeScript の `string[] | null`、Kotlin の `List<String>?` に相当。
 #
-# このファイル冒頭の `from __future__ import annotations` のおかげで、
-# 型ヒントは「実行時に評価されない文字列」として扱われる。型ヒントは
-# 実行時の型チェックではなく、エディタ補完や mypy 等の静的解析のための
-# 情報、というのが Python の立場（詳細は samples/11_type_hints_are_not_runtime_checks.py）。
+# 型ヒントは Python の実行時に評価されるが、値の型を強制するためではなく、
+# エディタ補完や mypy / pyright 等の静的解析のための情報、というのが Python の立場。
+# 詳細は samples/11_type_hints_are_not_runtime_checks.py を参照。
 #
 # デフォルト値に `None` を使うのは、上の append_bad の罠（mutable な
 # デフォルト値が呼び出し間で共有される）を避けるための定石。

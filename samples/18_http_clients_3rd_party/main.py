@@ -18,8 +18,6 @@
 scripts/run_all.py からはこのサンプル全体を除外している。
 """
 
-from __future__ import annotations
-
 import importlib
 
 
