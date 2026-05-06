@@ -98,6 +98,11 @@ def main() -> None:
     # ============================================================
     print("--- 例1: 必須引数だけ ---")
     args = parser.parse_args(["Alice"])
+    # parse_args の戻り値は Namespace。
+    # Namespace は、解析した引数を args.name や args.count のように
+    # 属性として取り出せるようにした「値の入れ物」。
+    # vars(args) は、その Namespace を dict に変換する。
+    # ** は dict をキーワード引数に展開するので、greet(name=..., count=..., ...) と同じ意味。
     greet(**vars(args))
 
     print("\n--- 例2: --count と --lang を指定 ---")
@@ -109,12 +114,23 @@ def main() -> None:
     greet(**vars(args))
 
     # ============================================================
+    # ヘルプ表示
+    # ============================================================
+    # argparse はデフォルトで -h / --help に対応している。
+    # --help が指定されるとヘルプを表示し、SystemExit(0) で正常終了する。
+    print("\n--- 例4: --help ---")
+    try:
+        parser.parse_args(["--help"])
+    except SystemExit as e:
+        print(f"  SystemExit code = {e.code}")
+
+    # ============================================================
     # 不正な引数を渡すとどうなるか
     # ============================================================
     # parse_args は通常エラー時に SystemExit を投げる（プロセス終了）。
     # ここでは exit_on_error=False に切り替えるのではなく、
     # try/except SystemExit で捕まえるのが手軽。
-    print("\n--- 例4: choices に無い --lang ---")
+    print("\n--- 例5: choices に無い --lang ---")
     try:
         parser.parse_args(["Dave", "--lang", "de"])
     except SystemExit as e:
