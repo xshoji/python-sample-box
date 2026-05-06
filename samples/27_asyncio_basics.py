@@ -24,48 +24,43 @@ import time
 
 # `async def` で定義された関数は coroutine function。
 # 呼ぶだけでは中身は実行されず、coroutine オブジェクトが返るだけ。
-async def fetch(name: str, seconds: float) -> str:
-    print(f"  [{time.perf_counter() - START:.2f}s] start  {name}")
+async def fetch(name: str, seconds: float, start_time: float) -> str:
+    print(f"  [{time.perf_counter() - start_time:.2f}s] start  {name}")
     # I/O 待ちの代わり。本物の I/O（HTTP, DB）も await で同様に書ける。
     await asyncio.sleep(seconds)
-    print(f"  [{time.perf_counter() - START:.2f}s] done   {name}")
+    print(f"  [{time.perf_counter() - start_time:.2f}s] done   {name}")
     return f"result-of-{name}"
 
 
-async def run_sequentially() -> list[str]:
+async def run_sequentially(start_time: float) -> list[str]:
     # await を順番に書くと、前の完了を待ってから次が走る = 直列。
-    a = await fetch("A", 1.0)
-    b = await fetch("B", 1.0)
+    a = await fetch("A", 1.0, start_time)
+    b = await fetch("B", 1.0, start_time)
     return [a, b]
 
 
-async def run_concurrently() -> list[str]:
+async def run_concurrently(start_time: float) -> list[str]:
     # gather は coroutine を複数渡すと、まとめて並行実行して結果のリストを返す。
     # I/O 待ちが重なる場合、合計時間が「最も長いタスク」分まで縮む。
     return await asyncio.gather(
-        fetch("X", 1.0),
-        fetch("Y", 1.0),
-        fetch("Z", 1.0),
+        fetch("X", 1.0, start_time),
+        fetch("Y", 1.0, start_time),
+        fetch("Z", 1.0, start_time),
     )
 
 
-START = 0.0  # main の中で計測開始時刻を入れる
-
-
 async def amain() -> None:
-    global START
-
     print("--- 直列実行 (await を順に並べた場合) ---")
-    START = time.perf_counter()
-    results = await run_sequentially()
+    start_time = time.perf_counter()
+    results = await run_sequentially(start_time)
     print(f"  results = {results}")
-    print(f"  elapsed = {time.perf_counter() - START:.2f}s  (直列なので合計は ≒ 2.0s)")
+    print(f"  elapsed = {time.perf_counter() - start_time:.2f}s  (直列なので合計は ≒ 2.0s)")
 
     print("\n--- 並行実行 (asyncio.gather) ---")
-    START = time.perf_counter()
-    results = await run_concurrently()
+    start_time = time.perf_counter()
+    results = await run_concurrently(start_time)
     print(f"  results = {results}")
-    print(f"  elapsed = {time.perf_counter() - START:.2f}s  (並行なので最長 ≒ 1.0s)")
+    print(f"  elapsed = {time.perf_counter() - start_time:.2f}s  (並行なので最長 ≒ 1.0s)")
 
     # ============================================================
     # コルーチンを await し忘れる罠
@@ -73,7 +68,8 @@ async def amain() -> None:
     # async 関数を「呼ぶだけ」だと、実行されない coroutine オブジェクトが返るだけ。
     # 多くの場合 RuntimeWarning: coroutine '...' was never awaited が出る。
     print("\n--- await し忘れに注意 ---")
-    coro = fetch("forgotten", 0.0)  # まだ実行されていない
+    start_time = time.perf_counter()
+    coro = fetch("forgotten", 0.0, start_time)  # まだ実行されていない
     print(f"  type = {type(coro).__name__}  (この時点では未実行)")
     # ちゃんと実行する
     print(f"  await した結果: {await coro}")
