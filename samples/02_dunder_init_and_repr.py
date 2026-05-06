@@ -8,15 +8,20 @@ dunder は "double underscore" の略です。`__init__`、`__repr__`、
 
 class Cart:
     def __init__(self, owner: str) -> None:
+        # `self` は「いま操作している Cart インスタンス自身」。
+        # `Cart("alice")` のように生成すると、Python が第1引数として自動的に渡す。
         # `__init__` はコンストラクタそのものではなく、生成済みインスタンスの初期化フック。
         # 実際の生成は `__new__` が担当するが、通常は意識しない。
         self.owner = owner
         self.items: list[str] = []
 
     def add(self, item: str) -> None:
+        # `cart.add("book")` と呼ぶと、`self` には `cart` が入る。
+        # JavaScript の `this`、Java/Kotlin/C# の `this` に近い。
         self.items.append(item)
 
     def __len__(self) -> int:
+        # `self` 経由で、そのインスタンスが持つ `items` を参照する。
         # len(cart) から呼ばれる。
         return len(self.items)
 
