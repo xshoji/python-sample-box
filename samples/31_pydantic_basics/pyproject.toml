@@ -1,0 +1,17 @@
+# Pydantic の学習サンプル専用 pyproject.toml。
+#
+# - リポジトリ全体は stdlib 中心なので、ここだけ独立した uv プロジェクトにしている。
+# - 動かし方:
+#       cd samples/31_pydantic_basics
+#       uv sync
+#       uv run main.py
+# - scripts/run_all.py からは EXCLUDED として除外済み。
+
+[project]
+name = "pydantic-basics"
+version = "0.0.0"
+description = "Learn Pydantic v2 basics: BaseModel, validation, Field, strict mode."
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.10",
+]
