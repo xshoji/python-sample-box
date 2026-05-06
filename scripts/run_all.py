@@ -18,6 +18,7 @@ SAMPLES = ROOT / "samples"
 # 例: 3rd party 依存があり、専用の手順（uv sync 等）でだけ動かしたいもの。
 EXCLUDED: set[str] = {
     "18_http_clients_3rd_party",
+    "31_pydantic_basics",
 }
 
 

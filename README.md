@@ -117,6 +117,16 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/28_argparse_cli.py` | `argparse` で CLI を作る：位置引数、オプション、choices、`BooleanOptionalAction`、サブコマンド |
 | `samples/29_slots_and_property.py` | `__slots__` と `@property`、`@dataclass(slots=True)` によるクラス設計の Python 流イディオム |
 | `samples/30_self_staticmethod_classmethod.py` | `self` / `@staticmethod` / `@classmethod` の意味と業務での使い分け |
+| `samples/31_pydantic_basics/` | Pydantic v2 の基本：`BaseModel`、実行時 validation、`Field`、strict mode。専用 `pyproject.toml` + `uv` で動かす。`run_all.py` からは除外 |
+| `samples/32_json_csv_stdlib.py` | 標準ライブラリ `json` / `csv` による外部データの読み書き |
+| `samples/33_collections_practical.py` | `collections` 実用編：`Counter` / `defaultdict` / `deque` / `ChainMap` / `namedtuple` |
+| `samples/34_itertools_functools_practical.py` | `itertools` / `functools` 厳選：`chain` / `groupby` / `pairwise` / `cache` / `partial` |
+| `samples/35_subprocess_run.py` | `subprocess.run` の基本：`check=True`、`capture_output`、`shell=True` を避ける理由 |
+| `samples/36_concurrent_futures_and_gil.py` | `concurrent.futures` と GIL：I/O 待ち向け ThreadPool、CPU 処理向け ProcessPool |
+| `samples/37_unittest_basics.py` | 標準ライブラリ `unittest` 入門：`TestCase`、`assertRaises`、`subTest` |
+| `samples/38_abc_vs_protocol.py` | `abc.ABC` と `Protocol` の使い分け：nominal typing と structural typing |
+| `samples/39_contextlib_practical.py` | `contextlib` 応用：`@contextmanager` / `suppress` / `closing` / `ExitStack` |
+| `samples/40_project_layout_and_pyproject.py` | `pyproject.toml` と `src/` レイアウトの基本 |
 
 ## 読み進め方
 
