@@ -116,6 +116,7 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/27_asyncio_basics.py` | `asyncio` 最小サンプル：`async`/`await` / `gather`、直列 vs 並行、await し忘れの罠 |
 | `samples/28_argparse_cli.py` | `argparse` で CLI を作る：位置引数、オプション、choices、`BooleanOptionalAction`、サブコマンド |
 | `samples/29_slots_and_property.py` | `__slots__` と `@property`、`@dataclass(slots=True)` によるクラス設計の Python 流イディオム |
+| `samples/30_self_staticmethod_classmethod.py` | `self` / `@staticmethod` / `@classmethod` の意味と業務での使い分け |
 
 ## 読み進め方
 
