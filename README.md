@@ -88,6 +88,7 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | ファイル | テーマ |
 | --- | --- |
 | `samples/01_indentation_and_blocks.py` | インデントが構文そのものであること、ブロックスコープではないこと |
+| `samples/01_package_names_and_import_roots/` | ディレクトリ名・パッケージ名・import 探索起点（`sys.path`）の関係 |
 | `samples/02_dunder_init_and_repr.py` | `__init__` と代表的な dunder method |
 | `samples/03_main_guard_and_imports.py` | `if __name__ == "__main__"` と import 時の実行 |
 | `samples/04_none_truthiness_identity.py` | `None`、真偽値判定、`is` と `==` の違い |
