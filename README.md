@@ -130,6 +130,13 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/39_contextlib_practical.py` | `contextlib` 応用：`@contextmanager` / `suppress` / `closing` / `ExitStack` |
 | `samples/40_project_layout_and_pyproject.py` | `pyproject.toml` と `src/` レイアウトの基本 |
 | `samples/41_access_by_naming_convention.py` | public / private / protected を命名規約で表す Python 文化 |
+| `samples/42_optional_union_types.py` | `T | None` / `Optional[T]` / `Union` の使い分け |
+| `samples/43_generics_pep695.py` | Python 3.12 のジェネリクス構文（PEP 695） |
+| `samples/44_copy_shallow_deep.py` | 代入・shallow copy・deep copy の違い |
+| `samples/45_pickle_risks.py` | `pickle` の便利さと信頼できないデータを load してはいけない理由 |
+| `samples/46_pythonic_before_after.py` | Pythonic な書き換えのビフォーアフター集 |
+| `samples/47_custom_exceptions.py` | 自作例外クラスの設計と `raise ... from ...` |
+| `samples/48_entry_points_and_main_module/` | `python file.py` / `python -m` / `__main__.py` / console script の入口 |
 
 ## 読み進め方
 
