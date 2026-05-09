@@ -16,6 +16,17 @@ my_app/
 """.strip()
 
 
+FLAT_LAYOUT_IMPORT_NOTE = """
+flat layout では、プロジェクトルート直下に package ディレクトリがある。
+そのため `cd my_app` してテストやスクリプトを実行すると、現在の作業ディレクトリ経由で
+`import my_app` が成功しやすい。
+
+これは小さいプロジェクトでは分かりやすい一方で、pyproject.toml の package 設定が
+間違っていても「ローカルでは import できる」状態になり、配布物として正しく
+インストールできるかを見落としやすい。
+""".strip()
+
+
 SRC_LAYOUT = """
 my_app/
   pyproject.toml
@@ -43,7 +54,7 @@ my-app = "my_app.cli:main"
 def main() -> None:
     print("--- flat layout ---")
     print(FLAT_LAYOUT)
-    print("\n小さいアプリでは分かりやすいが、作業ディレクトリの package を誤って import しやすい。")
+    print(f"\n{FLAT_LAYOUT_IMPORT_NOTE}")
 
     print("\n--- src layout ---")
     print(SRC_LAYOUT)
