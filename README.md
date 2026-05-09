@@ -128,6 +128,7 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/38_abc_vs_protocol.py` | `abc.ABC` と `Protocol` の使い分け：nominal typing と structural typing |
 | `samples/39_contextlib_practical.py` | `contextlib` 応用：`@contextmanager` / `suppress` / `closing` / `ExitStack` |
 | `samples/40_project_layout_and_pyproject.py` | `pyproject.toml` と `src/` レイアウトの基本 |
+| `samples/41_access_by_naming_convention.py` | public / private / protected を命名規約で表す Python 文化 |
 
 ## 読み進め方
 
