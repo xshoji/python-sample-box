@@ -20,6 +20,9 @@ def main() -> None:
         print(f"{name}: {score}")
 
     print("\n--- 3. 空判定は len(...) == 0 より truthiness ---")
+    # truthiness は「値そのものを bool として見たときに true / false になる性質」。
+    # Python では空の list / dict / str、0、None などは false 扱いになる。
+    # そのため `len(tasks) == 0` より `not tasks` と書くことが多い。
     tasks: list[str] = []
     if not tasks:
         print("タスクは空です")
@@ -38,6 +41,9 @@ def main() -> None:
         print("value は None")
 
     print("\n--- 7. dict の存在確認と取得は get が便利 ---")
+    # user["email"] は key が無いと KeyError になる。
+    # user.get("email", "メール未登録") は key があればその値、無ければ第2引数の既定値を返す。
+    # 「無ければデフォルトでよい」場面では、if "email" in user: ... より簡潔に書ける。
     user = {"name": "alice"}
     print(user.get("email", "メール未登録"))
 
