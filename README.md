@@ -91,7 +91,6 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/01_indentation_and_blocks.py` | インデントが構文そのものであること、ブロックスコープではないこと |
 | `samples/01_package_names_and_import_roots/` | ディレクトリ名・パッケージ名・import 探索起点（`sys.path`）の関係 |
 | `samples/02_dunder_init_and_repr.py` | `__init__` と代表的な dunder method |
-| `samples/03_main_guard_and_imports.py` | `if __name__ == "__main__"` と import 時の実行 |
 | `samples/04_none_truthiness_identity.py` | `None`、真偽値判定、`is` と `==` の違い |
 | `samples/05_mutability_and_default_args.py` | mutable object とデフォルト引数の罠 |
 | `samples/06_unpacking_and_comprehensions.py` | unpacking、内包表記、Python らしいデータ変換 |
@@ -137,6 +136,13 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/46_pythonic_before_after.py` | Pythonic な書き換えのビフォーアフター集 |
 | `samples/47_custom_exceptions.py` | 自作例外クラスの設計と `raise ... from ...` |
 | `samples/48_entry_points_and_main_module/` | `python file.py` / `python -m` / `__main__.py` / console script の入口 |
+| `samples/49_configuration_env_and_tomllib.py` | 環境変数・TOML・dataclass による設定オブジェクト |
+| `samples/50_filesystem_os_shutil_tempfile.py` | `pathlib` / `shutil` / `tempfile` / `os.walk` によるファイル操作 |
+| `samples/51_regex_re_basics.py` | 標準ライブラリ `re` の基本：search / match / fullmatch / group |
+| `samples/52_sqlite3_basics.py` | 標準ライブラリ `sqlite3` による DB 操作と placeholder |
+| `samples/53_lightweight_dependency_injection.py` | DI コンテナなしで依存を渡す Python の軽量 DI |
+| `samples/54_plugin_registry_pattern.py` | decorator と registry による plugin / command パターン |
+| `samples/55_tooling_ruff_black_mypy_pyright/` | Ruff / Black / mypy / pyright の位置づけ |
 
 ## 読み進め方
 

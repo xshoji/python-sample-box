@@ -19,7 +19,6 @@ samples/
   NN_name/              # 解説 README や補助モジュールを伴う形式
     main.py             # エントリポイント（固定名）
     README.md           # テーマ解説
-  supporting_module_for_import.py  # 03 で使う import 対象
 scripts/
   run_all.py            # samples/ を NN 順に一括実行
 docs/

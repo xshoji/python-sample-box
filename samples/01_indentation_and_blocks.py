@@ -60,7 +60,5 @@ def main() -> None:
 #   - Java の `public static void main(String[] args)`、
 #     Go の `func main()` に近い役割だが、Python では「特別な関数」では
 #     なく「ただの if 文」で実現している点がポイント。
-#
-# 詳細と import 時の挙動の違いは samples/03_main_guard_and_imports.py で扱う。
 if __name__ == "__main__":
     main()
