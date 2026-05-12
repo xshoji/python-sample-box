@@ -143,6 +143,8 @@ Python のバージョン表記は `3.12.13` のように `major.minor.micro` �
 | `samples/53_lightweight_dependency_injection.py` | DI コンテナなしで依存を渡す Python の軽量 DI |
 | `samples/54_plugin_registry_pattern.py` | decorator と registry による plugin / command パターン |
 | `samples/55_tooling_ruff_black_mypy_pyright/` | Ruff / Black / mypy / pyright の位置づけ |
+| `samples/56_uv_basics/` | `uv` の基本操作：Python 本体、venv、依存、lock、実行をまとめて扱う |
+| `samples/57_import_source_detection.py` | import 名から標準ライブラリ / 3rd party / 自前コードを見分けるヒント |
 
 ## 読み進め方
 
